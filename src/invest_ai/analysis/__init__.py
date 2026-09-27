@@ -6,10 +6,12 @@ from .eligibility import (
     EligibilityReason,
     EligibilityResult,
 )
+from .engine import InvestmentAnalysisEngine
 
 __all__ = [
     "AnalysisContext",
     "AnalysisEligibilityGate",
     "EligibilityReason",
     "EligibilityResult",
+    "InvestmentAnalysisEngine",
 ]
