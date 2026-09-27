@@ -1,7 +1,7 @@
-"""Contratos de dominio do Assistente Invest Ae.
+"""Contratos de domínio do Assistente Invest Aê.
 
-Estes modelos representam necessidade, evidencias e resultado da analise.
-Eles nao substituem o contrato financeiro do Invest Ae e nao sao uma
+Estes modelos representam necessidade, evidências e resultado da análise.
+Eles não substituem o contrato financeiro do Invest Aê e não são uma
 segunda fonte de verdade para dados de mercado.
 """
 
@@ -46,8 +46,40 @@ class NeedAssessment:
 
 
 @dataclass(frozen=True)
+class FiiAnalysisCandidate:
+    """Projeção analítica transitória de um FII disponível para o motor.
+
+    O objeto não é persistido como uma nova fonte financeira. Ele apenas
+    transporta os campos necessários à análise e mantém a proveniência.
+    """
+
+    ticker: str
+    name: str
+    type: str
+    segment: str
+    price: float | None
+    vp: float | None = None
+    pvp: float | None = None
+    pl: float | None = None
+    dividend_yield_12m: float | None = None
+    last_dividend: float | None = None
+    last_dividend_base_date: str | None = None
+    last_dividend_payment_date: str | None = None
+    last_dividend_payment_status: str | None = None
+    income_12m_per_share: float | None = None
+    amortization_12m_per_share: float | None = None
+    fundamentals_reference: str | None = None
+    dy_method: str | None = None
+    market_reference_generated_at: str | None = None
+    source_name: str | None = None
+    data_source_type: str | None = None
+    last_updated_at: str | None = None
+    quality_eligible: bool = False
+
+
+@dataclass(frozen=True)
 class EvidenceReference:
-    """Referencia rastreavel a um dado fornecido pela camada do Invest Ae."""
+    """Referência rastreável a um dado fornecido pela camada do Invest Aê."""
 
     asset_id: str
     metric: str
