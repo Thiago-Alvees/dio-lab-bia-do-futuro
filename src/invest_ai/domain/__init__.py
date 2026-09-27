@@ -1,8 +1,11 @@
+"""Contratos de domínio do Assistente Invest Aê."""
+
 from .models import (
     AnalysisStatus,
     CandidateAnalysis,
     Compatibility,
     EvidenceReference,
+    FiiAnalysisCandidate,
     InvestmentAnalysis,
     InvestorNeed,
     NeedAssessment,
@@ -16,6 +19,7 @@ __all__ = [
     "CapabilitySupport",
     "Compatibility",
     "EvidenceReference",
+    "FiiAnalysisCandidate",
     "InvestmentAnalysis",
     "InvestorNeed",
     "NeedAssessment",
