@@ -5,6 +5,9 @@
 __pycache__/
 *.py[cod]
 
+# Metadados locais gerados pelo empacotamento Python
+*.egg-info/
+
 # Cache de testes
 .pytest_cache/
 
